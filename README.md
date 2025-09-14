@@ -1,17 +1,17 @@
-# platzi-datehelper
+# @alexislevano/platzidate
 
 Una utilidad para manejar fechas en formato timestamp y long time.
 
 # Instalación
 
 ```bash
-npm install platzi-datehelper
+npm install @alexislevano/platzidate
 ```
 
 # Ejemplos de uso
 
 ```javascript
-const dateFormatter = require("platzi-datehelper");
+const dateFormatter = require("@alexislevano/platzidate");
 
 console.log("Timestamp", dateFormatter.getTimestamp());
 console.log("Fecha en Español:", dateFormatter.getLongTime());
