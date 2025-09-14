@@ -1,26 +1,30 @@
-name: Publish Package
+name: Publish Package to npm
 
 on:
   push:
     branches:
-      - main   # se ejecuta cuando hagas push a main
+      - main   # Se ejecuta cuando haces push a main
 
 jobs:
   publish-npm:
     runs-on: ubuntu-latest
 
     steps:
+      # 1️⃣ Clonar el repositorio
       - uses: actions/checkout@v3
 
+      # 2️⃣ Configurar Node.js y npm
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '20'  # puedes usar la versión que prefieras
+          node-version: '20'
           registry-url: 'https://registry.npmjs.org/'
 
+      # 3️⃣ Instalar dependencias
       - name: Install dependencies
         run: npm install
 
+      # 4️⃣ Publicar en npm
       - name: Publish to npm
         run: npm publish --access public
         env:
